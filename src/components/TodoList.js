@@ -1,11 +1,10 @@
-import React, { useState } from 'react'
+import React from 'react'
 
 
 const TodoList = ({ todos, setTodos }) => {
 
 
     const handleDelete = ({id}) => {
-        console.log(todos, id );
        setTodos(todos.filter( (todo) =>  todo.id !== id));
     }
 
@@ -18,7 +17,7 @@ const TodoList = ({ todos, setTodos }) => {
                         <input  value={todo.title} className="list" onChange={ (event) => event.preventDefault()}  />
                         <div>
                             <button  className = "button-delete" onClick={() => handleDelete(todo)}>
-                                <i class="fa fa-trash" aria-hidden="true"></i>
+                                <i className ="fa fa-trash" aria-hidden="true"></i>
                             </button>
                         </div>
                     </li>
