@@ -9,7 +9,8 @@ const TodoForm = ( { input , setInput,  todos, setTodos}) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        setTodos([ ...todos, { id: Math.floor(Math.random()*1000) , title: input }])
+        const newTodos = [ ...todos, { id: Math.floor(Math.random()*1000) , title: input }];
+        setTodos(newTodos)
         setInput('');
     }
 
@@ -23,7 +24,7 @@ const TodoForm = ( { input , setInput,  todos, setTodos}) => {
                     name='text'
                     required
                     onChange={handleChange}
-                    ></input>
+                    />
                 <button className='button-add '>Add</button>
             </form>
         </div>

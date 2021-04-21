@@ -5,7 +5,8 @@ const TodoList = ({ todos, setTodos }) => {
 
 
     const handleDelete = ({id}) => {
-       setTodos(todos.filter( (todo) =>  todo.id !== id));
+        const newTodos = todos.filter( (todo) =>  todo.id !== id);
+        setTodos(newTodos);
     }
 
     return (
@@ -13,8 +14,8 @@ const TodoList = ({ todos, setTodos }) => {
             {
                 todos.map( (todo) => {
                     return <li className="list-item" key={todo.id}>
-                        {/*<div>{todo.title} </div>*/}
-                        <input  value={todo.title} className="list" onChange={ (event) => event.preventDefault()}  />
+                       <div className="todo-title">{todo.title} </div>
+                      {/*  <input  value={todo.title} className="list" onChange={ (event) => event.preventDefault()}  />*/}
                         <div>
                             <button  className = "button-delete" onClick={() => handleDelete(todo)}>
                                 <i className ="fa fa-trash" aria-hidden="true"></i>
